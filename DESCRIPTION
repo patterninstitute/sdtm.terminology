@@ -6,7 +6,8 @@ Authors@R: c(
            comment = c(ORCID = "0000-0001-5226-3441")),
     person("Pattern Institute", role = c("cph", "fnd"))
   )
-Description: CDISC SDTM Controlled Terminology <https://evs.nci.nih.gov/ftp1/CDISC/SDTM/>.
+Description: CDISC SDTM Controlled Terminology
+    <https://evs.nci.nih.gov/ftp1/CDISC/SDTM/>, Q4 2023, 2023-12-15.
 License: Apache License (>= 2)
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
@@ -15,4 +16,5 @@ Depends:
     R (>= 2.10)
 LazyData: true
 Imports: 
+    dplyr,
     tibble
