@@ -1,0 +1,13 @@
+Package: sdtm.terminology
+Title: SDTM Terminology
+Version: 0.0.1
+Authors@R: c(
+    person("Ramiro", "Magno", , "rmagno@pattern.institute", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0001-5226-3441")),
+    person("Pattern Institute", role = c("cph", "fnd"))
+  )
+Description: CDISC SDTM Controlled Terminology <https://evs.nci.nih.gov/ftp1/CDISC/SDTM/>.
+License: Apache License (>= 2)
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
