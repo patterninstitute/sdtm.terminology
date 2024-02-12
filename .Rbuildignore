@@ -3,3 +3,4 @@
 ^LICENSE\.md$
 ^tools$
 ^data-raw$
+^README\.Rmd$
