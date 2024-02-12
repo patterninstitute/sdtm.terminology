@@ -8,6 +8,14 @@
 \description{
 CDISC SDTM Controlled Terminology \url{https://evs.nci.nih.gov/ftp1/CDISC/SDTM/}, Q4 2023, 2023-12-15.
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/patterninstitute/sdtm.terminology}
+  \item Report bugs at \url{https://github.com/patterninstitute/sdtm.terminology/issues}
+}
+
+}
 \author{
 \strong{Maintainer}: Ramiro Magno \email{rmagno@pattern.institute} (\href{https://orcid.org/0000-0001-5226-3441}{ORCID})
 

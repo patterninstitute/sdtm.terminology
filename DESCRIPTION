@@ -18,3 +18,5 @@ LazyData: true
 Imports: 
     dplyr,
     tibble
+URL: https://github.com/patterninstitute/sdtm.terminology
+BugReports: https://github.com/patterninstitute/sdtm.terminology/issues

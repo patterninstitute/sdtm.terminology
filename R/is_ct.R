@@ -13,14 +13,14 @@
 #'   otherwise.
 #'
 #' @examples
-#' is_term(term = "TENMW101", "C141657")
+#' is_term(term = "TENMW101", codelist = "C141657")
 #'
 #' # Note that the codelist term itself (`"TENMW1TC"`) is not part of its own
 #' # codelist (`"C141657"`).
-#' is_term(term = "TENMW1TC", "C141657")
+#' is_term(term = "TENMW1TC", codelist = "C141657")
 #'
 #' # `is_term()` is vectorized over `term` and `codelist`
-#' is_term(term = c("TENMW101", "TENMW104"), "C141657")
+#' is_term(term = c("TENMW101", "TENMW104"), codelist = "C141657")
 #'
 #' @export
 is_term <- function(term, codelist) {
@@ -29,14 +29,14 @@ is_term <- function(term, codelist) {
 }
 
 #' @examples
-#' is_code(code = "C174106", "C141657")
+#' is_code(code = "C174106", codelist = "C141657")
 #'
 #' # Note that the codelist code itself (`"C141657"`) is not part of its own
 #' # codelist (`"C141657"`).
-#' is_code(code = "C141657", "C141657")
+#' is_code(code = "C141657", codelist = "C141657")
 #'
 #' # `is_code()` is vectorized over `code` and `codelist`
-#' is_code(code = c("C174106", "C141701"), "C141657")
+#' is_code(code = c("C174106", "C141701"), codelist = "C141657")
 #'
 #' @rdname is_term
 #' @export

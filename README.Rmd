@@ -57,7 +57,7 @@ cl_code_to_term("C71620")
 # Are "%" and "%/s" terms from the UNIT code list?
 is_term(c("%", "%/s"), cl_term_to_code("UNIT"))
 
-# Find "%" and "%/s" codes
+# Find "%" and "%/s" codes within C71620 code list.
 term_to_code(c("%", "%/s"), "C71620")
 
 # It seems "%" is also a term in the VSRESU code list but not "%/s".
@@ -65,6 +65,9 @@ is_term(c("%", "%/s"), cl_term_to_code("VSRESU"))
 
 # Or, equivalently, query using codes instead...
 is_code(c("C25613", "C163560"), cl_term_to_code("VSRESU"))
+
+# Find which code lists contain the terms "DNA" or "RNA"
+match_code_list_from_term(c("DNA", "RNA"))
 ```
 
 ## Data
@@ -94,7 +97,6 @@ sdtm_terminology
 # SDTM code lists
 sdtm_code_lists
 ```
-
 
 ## `sdtm_code_terms`
 

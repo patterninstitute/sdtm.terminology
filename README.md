@@ -48,7 +48,7 @@ cl_code_to_term("C71620")
 is_term(c("%", "%/s"), cl_term_to_code("UNIT"))
 #> [1] TRUE TRUE
 
-# Find "%" and "%/s" codes
+# Find "%" and "%/s" codes within C71620 code list.
 term_to_code(c("%", "%/s"), "C71620")
 #> [1] "C25613"  "C163560"
 
@@ -59,6 +59,18 @@ is_term(c("%", "%/s"), cl_term_to_code("VSRESU"))
 # Or, equivalently, query using codes instead...
 is_code(c("C25613", "C163560"), cl_term_to_code("VSRESU"))
 #> [1]  TRUE FALSE
+
+# Find which code lists contain the terms "DNA" or "RNA"
+match_code_list_from_term(c("DNA", "RNA"))
+#> # A tibble: 6 × 4
+#>   code    term  cl_code cl_name                                 
+#>   <chr>   <chr> <chr>   <chr>                                   
+#> 1 C184459 DNA   C101832 Findings About Test Code                
+#> 2 C449    DNA   C111114 Genetic Sample Type                     
+#> 3 C135409 DNA   C65047  Laboratory Test Code                    
+#> 4 C184459 DNA   C163027 Type 1 Diabetes Findings About Test Code
+#> 5 C812    RNA   C111114 Genetic Sample Type                     
+#> 6 C132301 RNA   C65047  Laboratory Test Code
 ```
 
 ## Data
