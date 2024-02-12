@@ -1,5 +1,5 @@
 Package: sdtm.terminology
-Title: SDTM Terminology
+Title: CDISC SDTM Controlled Terminology
 Version: 0.0.1
 Authors@R: c(
     person("Ramiro", "Magno", , "rmagno@pattern.institute", role = c("aut", "cre"),

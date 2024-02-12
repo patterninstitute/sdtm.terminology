@@ -4,7 +4,7 @@
 \name{sdtm.terminology-package}
 \alias{sdtm.terminology}
 \alias{sdtm.terminology-package}
-\title{sdtm.terminology: SDTM Terminology}
+\title{sdtm.terminology: CDISC SDTM Controlled Terminology}
 \description{
 CDISC SDTM Controlled Terminology \url{https://evs.nci.nih.gov/ftp1/CDISC/SDTM/}, Q4 2023, 2023-12-15.
 }
