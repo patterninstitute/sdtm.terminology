@@ -12,6 +12,7 @@ CDISC SDTM Controlled Terminology \url{https://evs.nci.nih.gov/ftp1/CDISC/SDTM/}
 Useful links:
 \itemize{
   \item \url{https://github.com/patterninstitute/sdtm.terminology}
+  \item \url{http://www.pattern.institute/sdtm.terminology/}
   \item Report bugs at \url{https://github.com/patterninstitute/sdtm.terminology/issues}
 }
 
