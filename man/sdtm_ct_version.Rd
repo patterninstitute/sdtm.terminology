@@ -7,10 +7,12 @@
 sdtm_ct_version()
 }
 \value{
-A list of two strings:
+A list of three strings:
 \describe{
 \item{\code{quarter}}{Quarter.}
 \item{\code{release}}{Release date.}
+\item{\code{SDTMIG}}{Study Data Tabulation Model Implementation Guide version that
+is supported by this Controlled Terminology.}
 }
 }
 \description{
