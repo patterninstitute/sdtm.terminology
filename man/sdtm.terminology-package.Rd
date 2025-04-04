@@ -6,7 +6,7 @@
 \alias{sdtm.terminology-package}
 \title{sdtm.terminology: CDISC SDTM Controlled Terminology}
 \description{
-Clinical Data Interchange Standards Consortium (CDISC) Standard Data Tabulation Model (SDTM) Controlled Terminology, 2025-03-25. Source: \url{https://evs.nci.nih.gov/ftp1/CDISC/SDTM/}.
+Clinical Data Interchange Standards Consortium (CDISC) Standard Data Tabulation Model (SDTM) controlled terminology, 2025-03-25. Source: \url{https://evs.nci.nih.gov/ftp1/CDISC/SDTM/}.
 }
 \seealso{
 Useful links:
