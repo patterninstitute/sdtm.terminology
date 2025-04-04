@@ -1,6 +1,6 @@
 Package: sdtm.terminology
 Title: CDISC SDTM Controlled Terminology
-Version: 2025-03-25
+Version: 2025-3-25
 Authors@R: c(
     person("Ramiro", "Magno", , "rmagno@pattern.institute", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0001-5226-3441")),
@@ -15,7 +15,7 @@ Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
 Depends: 
-    R (>= 2.10)
+    R (>= 4.1.0)
 LazyData: true
 Imports: 
     dplyr,
