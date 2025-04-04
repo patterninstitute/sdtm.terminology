@@ -54,29 +54,21 @@ The current controlled terminology release bundled with this package is:
 ct_release()
 ```
 
-## SDTM terms
+## SDTM terminology
+
+The function `ct()` returns SDTM terminology as a tidy dataset, one row
+per concept.
 
 ```{r}
 # SDTM terms (other than code lists)
 ct()
-```
-
-## Code lists
-
-```{r}
 # SDTM code lists
 ct("list")
-```
-
-## Full SDTM terminology 
-
-```{r}
 # SDTM terminology individual terms and code list terms.
 ct("all")
 ```
 
-
-## Crosswalks
+## Conversion between codes and terms
 
 Convert terms to codes and codes to terms, and determine if a term is included
 in a terminology code list:

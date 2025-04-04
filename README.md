@@ -46,7 +46,10 @@ ct_release()
 #> [1] "2025-03-25"
 ```
 
-## SDTM terms
+## SDTM terminology
+
+The function `ct()` returns SDTM terminology as a tidy dataset, one row
+per concept.
 
 ``` r
 # SDTM terms (other than code lists)
@@ -67,8 +70,6 @@ ct()
 #> # ℹ 43,688 more rows
 ```
 
-## Code lists
-
 ``` r
 # SDTM code lists
 ct("list")
@@ -87,8 +88,6 @@ ct("list")
 #> 10 C182465   TRUE    C182465 AIMS0108T09OR FALSE Abnormal Inv… Abno… Abno… CDIS…
 #> # ℹ 1,148 more rows
 ```
-
-## Full SDTM terminology
 
 ``` r
 # SDTM terminology individual terms and code list terms.
@@ -109,7 +108,7 @@ ct("all")
 #> # ℹ 44,846 more rows
 ```
 
-## Crosswalks
+## Conversion between codes and terms
 
 Convert terms to codes and codes to terms, and determine if a term is
 included in a terminology code list:
