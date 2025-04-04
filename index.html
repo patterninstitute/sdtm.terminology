@@ -83,8 +83,9 @@
 <span><span class="co">#&gt; [1] "2025-03-25"</span></span></code></pre></div>
 </div>
 <div class="section level2">
-<h2 id="sdtm-terms">SDTM terms<a class="anchor" aria-label="anchor" href="#sdtm-terms"></a>
+<h2 id="sdtm-terminology">SDTM terminology<a class="anchor" aria-label="anchor" href="#sdtm-terminology"></a>
 </h2>
+<p>The function <code><a href="reference/ct.html">ct()</a></code> returns SDTM terminology as a tidy dataset, one row per concept.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># SDTM terms (other than code lists)</span></span>
 <span><span class="fu"><a href="reference/ct.html">ct</a></span><span class="op">(</span><span class="op">)</span></span>
@@ -102,10 +103,6 @@
 <span><span class="co">#&gt;  9 C141663   C174103 A4STR101                          4-Stai… A4ST… 4-St… 4-St…</span></span>
 <span><span class="co">#&gt; 10 C141663   C141706 A4STR102                          4-Stai… A4ST… 4-St… 4-St…</span></span>
 <span><span class="co">#&gt; # ℹ 43,688 more rows</span></span></code></pre></div>
-</div>
-<div class="section level2">
-<h2 id="code-lists">Code lists<a class="anchor" aria-label="anchor" href="#code-lists"></a>
-</h2>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># SDTM code lists</span></span>
 <span><span class="fu"><a href="reference/ct.html">ct</a></span><span class="op">(</span><span class="st">"list"</span><span class="op">)</span></span>
@@ -123,10 +120,6 @@
 <span><span class="co">#&gt;  9 C182464   TRUE    C182464 AIMS0101T07OR FALSE Abnormal Inv… Abno… Abno… CDIS…</span></span>
 <span><span class="co">#&gt; 10 C182465   TRUE    C182465 AIMS0108T09OR FALSE Abnormal Inv… Abno… Abno… CDIS…</span></span>
 <span><span class="co">#&gt; # ℹ 1,148 more rows</span></span></code></pre></div>
-</div>
-<div class="section level2">
-<h2 id="full-sdtm-terminology">Full SDTM terminology<a class="anchor" aria-label="anchor" href="#full-sdtm-terminology"></a>
-</h2>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># SDTM terminology individual terms and code list terms.</span></span>
 <span><span class="fu"><a href="reference/ct.html">ct</a></span><span class="op">(</span><span class="st">"all"</span><span class="op">)</span></span>
@@ -146,7 +139,7 @@
 <span><span class="co">#&gt; # ℹ 44,846 more rows</span></span></code></pre></div>
 </div>
 <div class="section level2">
-<h2 id="crosswalks">Crosswalks<a class="anchor" aria-label="anchor" href="#crosswalks"></a>
+<h2 id="conversion-between-codes-and-terms">Conversion between codes and terms<a class="anchor" aria-label="anchor" href="#conversion-between-codes-and-terms"></a>
 </h2>
 <p>Convert terms to codes and codes to terms, and determine if a term is included in a terminology code list:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
