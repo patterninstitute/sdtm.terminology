@@ -6,7 +6,6 @@ template:
 
 reference:
 - title: SDTM Terminology
-  desc: Retrieves SDTM Terminology as a Tidy Dataset
   contents:
   - ct
 
