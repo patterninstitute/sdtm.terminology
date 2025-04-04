@@ -32,8 +32,7 @@ specific code lists.
 ## Installation
 
 ``` r
-# install.packages("pak")
-pak::pak("patterninstitute/sdtm.terminology")
+install.packages("sdtm.terminology")
 ```
 
 ## Version
