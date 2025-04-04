@@ -12,7 +12,7 @@ CDISC SDTM Controlled Terminology Q1 2025, 2025-03-25 \url{https://evs.nci.nih.g
 Useful links:
 \itemize{
   \item \url{https://github.com/patterninstitute/sdtm.terminology}
-  \item \url{http://www.pattern.institute/sdtm.terminology/}
+  \item \url{https://www.pattern.institute/sdtm.terminology/}
   \item Report bugs at \url{https://github.com/patterninstitute/sdtm.terminology/issues}
 }
 
