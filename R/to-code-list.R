@@ -17,10 +17,9 @@
 #' there are elements in `term`, but potentially more because of one-to-many
 #' mappings. The returned tibble comprises three columns:
 #' \describe{
-#' \item{`term`}{An SDTM terminology term (e.g. `"TENMW104"`).}
 #' \item{`code`}{An SDTM terminology code (e.g. `"C141701"`).}
-#' \item{`cl_code`}{The code of the associated code list.}
-#' \item{`cl_name`}{The name of the associated code list.}
+#' \item{`term`}{An SDTM terminology term (e.g. `"TENMW104"`).}
+#' \item{`clst_code`}{The code of the associated code list.}
 #' }
 #'
 #' @examples
@@ -35,11 +34,8 @@ match_code_list_from_term <- function(term) {
 
   query <- tibble::tibble(term = term)
 
-  dplyr::left_join(query,
-                   sdtm.terminology::sdtm_code_terms,
-                   by = "term") |>
-    dplyr::select(c("code", "term", "cl_code")) |>
-    dplyr::left_join(sdtm.terminology::sdtm_code_lists[c("code", "cl_name")], by = c(cl_code = "code"))
+  dplyr::left_join(query, ct(), by = "term") |>
+    dplyr::select(c("code", "term", "clst_code"))
 
 }
 
@@ -56,7 +52,6 @@ match_code_list_from_term <- function(term) {
 #'
 #' # Codes for code lists are for all intents and purposes not mappable to
 #' # parent code lists.
-#' "C141657" %in% cl_codes() # C141657 is a code list
 #' match_code_list_from_code(code = "C141657")
 #'
 #' @rdname match_code_list_from_term
@@ -64,10 +59,6 @@ match_code_list_from_term <- function(term) {
 match_code_list_from_code <- function(code) {
 
   query <- tibble::tibble(code = code)
-
-  dplyr::left_join(query,
-                   sdtm.terminology::sdtm_code_terms,
-                   by = "code") |>
-    dplyr::select(c("code", "term", "cl_code")) |>
-    dplyr::left_join(sdtm.terminology::sdtm_code_lists[c("code", "cl_name")], by = c(cl_code = "code"))
+  dplyr::left_join(query, ct(), by = "code") |>
+    dplyr::select(c("code", "term", "clst_code"))
 }

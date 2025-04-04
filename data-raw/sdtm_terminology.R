@@ -12,38 +12,28 @@ col_types <-
     `NCI Preferred Term` = col_character()
   )
 
-sdtm_terminology <-
+ct <-
   readr::read_tsv(here::here("data-raw", "SDTM Terminology.tar.xz"), col_types = col_types) |>
   dplyr::rename(
     code = Code,
-    cl_code = `Codelist Code`,
-    is_extensible = `Codelist Extensible (Yes/No)`,
-    cl_name = `Codelist Name`,
+    clst_code = `Codelist Code`,
+    ext = `Codelist Extensible (Yes/No)`,
+    name = `Codelist Name`,
     term = `CDISC Submission Value`,
-    synonym = `CDISC Synonym(s)`,
-    definition = `CDISC Definition`,
-    nci_term = `NCI Preferred Term`
+    syn = `CDISC Synonym(s)`,
+    def = `CDISC Definition`,
+    nci = `NCI Preferred Term`
   ) |>
   dplyr::mutate(
-    is_extensible = dplyr::case_when(
-      is_extensible == "No" ~ FALSE,
-      is_extensible == "Yes" ~ TRUE,
+    ext = dplyr::case_when(
+      ext == "No" ~ FALSE,
+      ext == "Yes" ~ TRUE,
       .default = NA
     )
   ) |>
-  dplyr::relocate(term, .after = "code")
+  dplyr::relocate(term, .after = "code") |>
+  dplyr::mutate(is_clst = is.na(clst_code), .before = 1L) |>
+  dplyr::relocate("clst_code", .before = 1L) |>
+  dplyr::mutate(clst_code = dplyr::coalesce(.data$clst_code, .data$code))
 
-sdtm_code_lists <-
-  sdtm_terminology |>
-  dplyr::filter(is.na(cl_code)) |>
-  dplyr::select(-"cl_code")
-
-sdtm_code_terms <-
-  sdtm_terminology |>
-  dplyr::filter(!is.na(cl_code)) |>
-  dplyr::relocate(cl_code, .before = 1L) |>
-  dplyr::select(-c("is_extensible", "cl_name"))
-
-usethis::use_data(sdtm_terminology, overwrite = TRUE, compress = "xz")
-usethis::use_data(sdtm_code_lists, overwrite = TRUE, compress = "xz")
-usethis::use_data(sdtm_code_terms, overwrite = TRUE, compress = "xz")
+readr::write_rds(x = ct, file = "inst/extdata/ct.rds", compress = "xz")

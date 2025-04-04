@@ -14,14 +14,13 @@ knitr::opts_chunk$set(
 library(sdtm.terminology)
 ```
 
-# sdtm.terminology <img src="man/figures/logo.svg" align="right" height="139" alt="" />
+# sdtm.terminology <img src="man/figures/logo-wo-fonts.svg" align="right" height="139" alt="" />
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/patterninstitute/sdtm.terminology/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/patterninstitute/sdtm.terminology/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-`{sdtm.terminology}` is an R data package providing CDISC SDTM terminology
-(release 2023-12-15).
+`{sdtm.terminology}` is an R data package providing CDISC SDTM terminology.
 
 [CDISC SDTM Controlled
 Terminology](https://www.cdisc.org/standards/terminology/controlled-terminology)
@@ -41,68 +40,62 @@ as well as to verify the association of terms with specific code lists.
 ## Installation
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("patterninstitute/sdtm.terminology")
+# install.packages("pak")
+pak::pak("patterninstitute/sdtm.terminology")
 ```
 
-## Quick usage example
+## Version
+
+The current controlled terminology release bundled with this package is:
+
+```{r}
+# SDTM controlled terminology version
+ct_release()
+```
+
+## SDTM terms
+
+```{r}
+# SDTM terms (other than code lists)
+ct()
+```
+
+## Code lists
+
+```{r}
+# SDTM code lists
+ct("list")
+```
+
+## Full SDTM terminology 
+
+```{r}
+# SDTM terminology individual terms and code list terms.
+ct("all")
+```
+
+
+## Crosswalks
 
 Convert terms to codes and codes to terms, and determine if a term is included
 in a terminology code list:
 
 ```{r}
 # Convert a code list term to respective C-code and back again
-cl_term_to_code("UNIT")
-cl_code_to_term("C71620")
-
+clst_term_to_code("UNIT")
+clst_code_to_term("C71620")
 # Are "%" and "%/s" terms from the UNIT code list?
-is_term(c("%", "%/s"), cl_term_to_code("UNIT"))
-
+is_term(c("%", "%/s"), clst_term_to_code("UNIT"))
 # Find "%" and "%/s" codes within C71620 code list.
 term_to_code(c("%", "%/s"), "C71620")
-
 # It seems "%" is also a term in the VSRESU code list but not "%/s".
-is_term(c("%", "%/s"), cl_term_to_code("VSRESU"))
-
+is_term(c("%", "%/s"), clst_term_to_code("VSRESU"))
 # Or, equivalently, query using codes instead...
-is_code(c("C25613", "C163560"), cl_term_to_code("VSRESU"))
-
+is_code(c("C25613", "C163560"), clst_term_to_code("VSRESU"))
 # Find which code lists contain the terms "DNA" or "RNA"
 match_code_list_from_term(c("DNA", "RNA"))
+# Round trip from terms to codes to parent code list codes...
+match_code_list_from_code(term_to_code(c("%", "%/s"), "C71620"))
 ```
 
-## Data
-
-`{sdtm.terminology}` bundles three data sets:
-
-- `sdtm_terminology`: This is the same data set as provided upstream by CDISC,
-   except for variable renaming and conversion of "Yes"/"No" values to
-   `TRUE`/`FALSE` values in the `is_extensible` column.
-- `sdtm_code_lists`: A subset of `sdtm_terminology` containing only code lists.
-- `sdtm_code_terms`: A subset of `sdtm_terminology` containing terms other than
-   code lists.
-
-## `sdtm_terminology`
-
-```{r}
-# SDTM controlled terminology version
-sdtm_ct_version()
-
-# SDTM terminology main data set
-sdtm_terminology
-```
-
-## `sdtm_code_lists`
-
-```{r}
-# SDTM code lists
-sdtm_code_lists
-```
-
-## `sdtm_code_terms`
-
-```{r}
-# SDTM terms (other than code lists)
-sdtm_code_terms
-```
 
