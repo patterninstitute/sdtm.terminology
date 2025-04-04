@@ -21,3 +21,4 @@ Imports:
     tibble
 URL: https://github.com/patterninstitute/sdtm.terminology, https://www.pattern.institute/sdtm.terminology/
 BugReports: https://github.com/patterninstitute/sdtm.terminology/issues
+Config/Needs/website: patterninstitute/chic
